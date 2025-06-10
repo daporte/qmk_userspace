@@ -150,6 +150,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    // Check for G, J, K in the numbers layer
+    if (record->event.pressed && (keycode == KC_G || keycode == KC_J || keycode == KC_K)) {
+        tap_code(keycode);  // Manually type the key
+        disable_num_word(); // Disable num word
+        return false;       // Stop further processing
+    }
 
     return process_record_user_kb(keycode, record);
 }
