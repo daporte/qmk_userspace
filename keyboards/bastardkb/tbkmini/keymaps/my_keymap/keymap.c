@@ -137,13 +137,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [L_NUMBERS] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_TAB, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
+        KC_TAB, XXXXXXX, XXXXXXX, KC_J, KC_K, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX, XXXXXXX,
+        KC_ESC, KC_6, KC_4, KC_0, KC_2, XXXXXXX, XXXXXXX, KC_3, KC_1, KC_5, KC_7, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_LSFT, XXXXXXX, XXXXXXX, KC_G, KC_8, XXXXXXX, XXXXXXX, KC_9, XXXXXXX, XXXXXXX, XXXXXXX, NUMWORD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-        KC_LGUI, KC_SPC, _______, MO(3), KC_ENT, KC_RALT
+        KC_BSPC, KC_TAB, KC_LCTL, MO(L_NUMBERS), KC_SPC, KC_ENT
         //`--------------------------'  `--------------------------'
     /*    ),*/
     /**/
