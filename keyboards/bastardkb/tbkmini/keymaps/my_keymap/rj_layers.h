@@ -15,13 +15,26 @@
  */
 
 #pragma once
-#include QMK_KEYBOARD_H
-#include "rj_keycodes.h"
-#include "rj_layers.h"
 
-bool is_num_word_enabled(void);
-void enable_num_word(void);
-void disable_num_word(void);
-void toggle_num_word(void);
+enum rj_layers {
+    L_BASE,
 
-bool process_record_num_word(uint16_t keycode, const keyrecord_t *record);
+#ifdef USER_INCLUDE_QWERTY
+    L_QWERTY,
+#endif
+
+#ifdef USER_INCLUDE_GAMING_LAYER
+    L_GAMING,
+#endif
+
+    L_NUMBERS,
+    L_SYMBOLS,
+    L_NAVIGATION,
+    L_FN,
+
+#ifdef USER_INCLUDE_MACRO_LAYER
+    L_MACROS,
+#endif
+
+    _LAYER_SAFE_RANGE
+};
