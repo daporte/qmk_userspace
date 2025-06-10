@@ -25,3 +25,4 @@ void disable_num_word(void);
 void toggle_num_word(void);
 
 bool process_record_num_word(uint16_t keycode, const keyrecord_t *record);
+bool should_terminate_num_word(uint16_t keycode, keyrecord_t *record);
