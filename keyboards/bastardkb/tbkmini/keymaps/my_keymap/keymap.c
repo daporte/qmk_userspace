@@ -16,7 +16,7 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "replicaJunction.h"
+#include "num_word.h"
 /* Key positions
   ╭─────────────────────╮ ╭─────────────────────╮
   │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
