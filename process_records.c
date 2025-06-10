@@ -155,7 +155,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         bool result = process_record_user_kb(keycode, record);
 
         // If this was a terminating key, disable num word after processing
-        if (should_terminate_num_word(keycode, record)) {
+        if (should_terminate_num_word(keycode, (const keyrecord_t *)record)) {
             disable_num_word();
         }
 
