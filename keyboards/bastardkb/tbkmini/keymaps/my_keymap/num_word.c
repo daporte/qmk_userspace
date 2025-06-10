@@ -45,13 +45,7 @@ void toggle_num_word(void) {
 }
 
 bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
-    // Get the actual keycode from the current layer
-    uint16_t actual_keycode = keycode;
-    if (is_num_word_on) {
-        actual_keycode = get_keycode(L_NUMBERS, record->event.key.row, record->event.key.col);
-    }
-
-    switch (actual_keycode) {
+    switch (keycode) {
         // Keycodes which should not disable num word mode.
         // We could probably be more brief with these definitions by using
         // a couple more ranges, but I believe "explicit is better than
