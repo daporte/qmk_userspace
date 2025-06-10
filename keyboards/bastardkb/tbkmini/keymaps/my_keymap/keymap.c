@@ -52,8 +52,7 @@ enum combos {
     COMBO_UNDER,
     COMBO_FSLH,
     COMBO_PIPE,
-    COMBO_LALT,
-    COMBO_COUNT
+    COMBO_LALT
 };
 
 const uint16_t PROGMEM combo_qmark[] = {KC_P15, KC_P16, COMBO_END};
