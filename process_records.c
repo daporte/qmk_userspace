@@ -146,24 +146,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     /*    }*/
     /*}*/
 
-    // First check if we should process the key
-    bool continue_processing = process_record_num_word(keycode, record);
-
-    // If num word says to continue and the key is pressed
-    if (continue_processing && record->event.pressed) {
-        // Process the key
-        bool result = process_record_user_kb(keycode, record);
-
-        // If this was a terminating key, disable num word after processing
-        if (should_terminate_num_word(keycode, (const keyrecord_t *)record)) {
-            disable_num_word();
-        }
-
-        return result;
+    // First check if this is a terminating key
+    if (record->event.pressed && should_terminate_num_word(keycode, (const keyrecord_t *)record)) {
+        // Process the key first (this will use the current layer's keycode)
+        process_record_user_kb(keycode, record);
+        // Then disable num word
+        disable_num_word();
+        return false;
     }
 
-    return continue_processing;
-
+    // If not terminating, do normal num word processing
+    if (!process_record_num_word(keycode, record)) {
+        return false;
+    }
 
     return process_record_user_kb(keycode, record);
 }
