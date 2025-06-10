@@ -150,10 +150,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
-    // Check for terminating keys
-    if (record->event.pressed && (keycode == KC_G || keycode == KC_J || keycode == KC_K)) {
-        disable_num_word();
-    }
 
     return process_record_user_kb(keycode, record);
 }
