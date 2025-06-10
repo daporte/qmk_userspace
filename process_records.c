@@ -149,10 +149,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // First check if this is a terminating key
     if (record->event.pressed && should_terminate_num_word(keycode, (const keyrecord_t *)record)) {
         // Process the key first (this will use the current layer's keycode)
-        process_record_user_kb(keycode, record);
+        bool result = process_record_user_kb(keycode, record);
         // Then disable num word
         disable_num_word();
-        return false;
+        return result;
     }
 
     // If not terminating, do normal num word processing
