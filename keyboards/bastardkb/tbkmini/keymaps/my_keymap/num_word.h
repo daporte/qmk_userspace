@@ -16,7 +16,7 @@
 
 #pragma once
 #include QMK_KEYBOARD_H
-/*#include "rj_keycodes.h"*/
+#include "rj_keycodes.h"
 /*#include "rj_layers.h"*/
 
 bool is_num_word_enabled(void);
