@@ -26,13 +26,13 @@ bool is_num_word_enabled(void) {
 void enable_num_word(void) {
     if (is_num_word_on) return;
     is_num_word_on = true;
-    layer_on(L_NUMBERS);
+    layer_on(1);
 }
 
 void disable_num_word(void) {
     if (!is_num_word_on) return;
     is_num_word_on = false;
-    layer_off(L_NUMBERS);
+    layer_off(1);
 }
 
 void toggle_num_word(void) {
