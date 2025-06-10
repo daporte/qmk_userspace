@@ -45,105 +45,105 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // process_record_quantum
     // https://github.com/qmk/qmk_firmware/blob/master/quantum/quantum.c
 
-    if (!(
-#ifdef USER_CAPS_WORD_ENABLE
-        process_record_caps_word(keycode, record) &&
-#endif
-#ifdef USER_MOUSE_JIGGLE_ENABLE
-        process_record_mouse_jiggle(keycode, record) &&
-#endif
-#ifdef USER_NUM_WORD_ENABLE
+/*    if (!(*/
+/*#ifdef USER_CAPS_WORD_ENABLE*/
+/*        process_record_caps_word(keycode, record) &&*/
+/*#endif*/
+/*#ifdef USER_MOUSE_JIGGLE_ENABLE*/
+/*        process_record_mouse_jiggle(keycode, record) &&*/
+/*#endif*/
+/*#ifdef USER_NUM_WORD_ENABLE*/
         process_record_num_word(keycode, record) &&
-#endif
-#ifdef USER_SECRETS_ENABLE
-        process_record_secrets(keycode, record) &&
-#endif
-#ifdef USER_SUPER_ALT_TAB_ENABLE
-        process_record_super_alt_tab(keycode, record) &&
-#endif
-        true)) {
-        return false;
-    }
+/*#endif*/
+/*#ifdef USER_SECRETS_ENABLE*/
+/*        process_record_secrets(keycode, record) &&*/
+/*#endif*/
+/*#ifdef USER_SUPER_ALT_TAB_ENABLE*/
+/*        process_record_super_alt_tab(keycode, record) &&*/
+/*#endif*/
+/*        true)) {*/
+/*        return false;*/
+/*    }*/
+/**/
 
-
-    // Miscellaneous keycode handling
-    mod_state = get_mods();
-
-    switch(keycode)
-    {
-        case QK_MAKE: {
-            if (record->event.pressed)
-                SEND_STRING("qmk compile --keyboard " QMK_KEYBOARD " --keymap " QMK_KEYMAP);
-            return false;
-        }
-        case QK_FLSH: {
-            if (record->event.pressed) {
-                SEND_STRING("qmk flash --keyboard " QMK_KEYBOARD " --keymap " QMK_KEYMAP);
-            }
-            return false;
-        }
-        case QK_VERS: {
-            if (record->event.pressed) {
-                SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION ", Built on: " QMK_BUILDDATE);
-            }
-            return false;
-        }
-        case PRG_EQ: {
-            if (record->event.pressed) {
-                SEND_STRING("==");
-            }
-            return false;
-        }
-        case PRG_NE: {
-            if (record->event.pressed) {
-                SEND_STRING("!=");
-            }
-            return false;
-        }
-        case PRG_GEQ: {
-            if (record->event.pressed) {
-                SEND_STRING(">=");
-            }
-            return false;
-        }
-        case PRG_LEQ: {
-            if (record->event.pressed) {
-                SEND_STRING("<=");
-            }
-            return false;
-        }
-        case PRG_ARR: {
-            if (record->event.pressed) {
-                SEND_STRING("=>");
-            }
-            return false;
-        }
-
-        case PS_ITEM: {
-            if (record->event.pressed) {
-                SEND_STRING("$_");
-            }
-            return false;
-        }
-        case FS_PIPE: {
-            if (record->event.pressed) {
-                SEND_STRING("|>");
-            }
-            return false;
-        }
-        case FS_ARR: {
-            if (record->event.pressed) {
-                SEND_STRING("->");
-            }
-            return false;
-        }
-        case SHEBANG: {
-            if (record->event.pressed) {
-                SEND_STRING("#!");
-            }
-            return false;
-        }
-    }
+    /*// Miscellaneous keycode handling*/
+    /*mod_state = get_mods();*/
+    /**/
+    /*switch(keycode)*/
+    /*{*/
+    /*    case QK_MAKE: {*/
+    /*        if (record->event.pressed)*/
+    /*            SEND_STRING("qmk compile --keyboard " QMK_KEYBOARD " --keymap " QMK_KEYMAP);*/
+    /*        return false;*/
+    /*    }*/
+    /*    case QK_FLSH: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("qmk flash --keyboard " QMK_KEYBOARD " --keymap " QMK_KEYMAP);*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case QK_VERS: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION ", Built on: " QMK_BUILDDATE);*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case PRG_EQ: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("==");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case PRG_NE: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("!=");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case PRG_GEQ: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING(">=");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case PRG_LEQ: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("<=");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case PRG_ARR: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("=>");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /**/
+    /*    case PS_ITEM: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("$_");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case FS_PIPE: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("|>");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case FS_ARR: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("->");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*    case SHEBANG: {*/
+    /*        if (record->event.pressed) {*/
+    /*            SEND_STRING("#!");*/
+    /*        }*/
+    /*        return false;*/
+    /*    }*/
+    /*}*/
 
     return process_record_user_kb(keycode, record);
 }
