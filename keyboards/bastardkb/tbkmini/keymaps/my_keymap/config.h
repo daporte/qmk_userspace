@@ -1,3 +1,0 @@
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 30
-
