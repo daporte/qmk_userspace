@@ -53,7 +53,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 /*        process_record_mouse_jiggle(keycode, record) &&*/
 /*#endif*/
 /*#ifdef USER_NUM_WORD_ENABLE*/
-        process_record_num_word(keycode, record) &&
+    /*process_record_num_word(keycode, record) &&*/
+    process_record_num_word(keycode, record)
 /*#endif*/
 /*#ifdef USER_SECRETS_ENABLE*/
 /*        process_record_secrets(keycode, record) &&*/
