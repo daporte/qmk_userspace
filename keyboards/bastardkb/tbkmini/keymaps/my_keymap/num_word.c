@@ -122,8 +122,11 @@ bool process_record_num_word(uint16_t keycode, const keyrecord_t *record) {
     }
 
     if (should_terminate_num_word(keycode, record)) {
-        disable_num_word();
+        // Return true to allow the key to be processed first
+        // The process_record_user function will handle disabling num word after
+        return true;
     }
 
+    // Not a terminating key, continue normal num word behavior
     return true;
 }

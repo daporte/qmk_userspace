@@ -146,9 +146,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     /*    }*/
     /*}*/
 
-    if (!process_record_num_word(keycode, record)) {
-        return false;
+    // First check if we should process the key
+    bool continue_processing = process_record_num_word(keycode, record);
+
+    // If num word says to continue and the key is pressed
+    if (continue_processing && record->event.pressed) {
+        // Process the key
+        bool result = process_record_user_kb(keycode, record);
+
+        // If this was a terminating key, disable num word after processing
+        if (should_terminate_num_word(keycode, record)) {
+            disable_num_word();
+        }
+
+        return result;
     }
+
+    return continue_processing;
 
 
     return process_record_user_kb(keycode, record);
