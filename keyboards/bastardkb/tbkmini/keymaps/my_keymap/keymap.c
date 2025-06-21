@@ -27,7 +27,7 @@
 
 /*#define COMBO_TERM_FAST 18*/
 /*#define COMBO_TERM_SLOW 30*/
-#define COMBO_TERM 18
+/*#define COMBO_TERM 18*/
 
 
 enum combos {
