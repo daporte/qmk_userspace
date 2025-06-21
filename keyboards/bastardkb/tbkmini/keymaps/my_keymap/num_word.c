@@ -52,7 +52,6 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
         // implicit"
         case KC_1 ... KC_0:
         case KC_EQL:
-        case KC_SCLN:
         case KC_MINS:
         case KC_DOT:
 
