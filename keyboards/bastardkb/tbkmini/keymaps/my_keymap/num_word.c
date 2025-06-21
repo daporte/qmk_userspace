@@ -85,8 +85,12 @@ bool process_record_num_word(uint16_t keycode, const keyrecord_t *record) {
     // Handle the custom keycodes that go with this feature
     if (keycode == NUMWORD) {
         if (record->event.pressed) {
-            enable_num_word();
-            num_word_timer = timer_read();
+            if (is_num_word_on) {
+                disable_num_word();
+            } else {
+                enable_num_word();
+                num_word_timer = timer_read();
+            }
             return false;
         }
         else {

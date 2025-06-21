@@ -25,8 +25,9 @@
   ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
           ╰─────────────╯ ╰─────────────╯ */
 
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 30
+/*#define COMBO_TERM_FAST 18*/
+/*#define COMBO_TERM_SLOW 30*/
+#define COMBO_TERM 18
 
 
 enum combos {
