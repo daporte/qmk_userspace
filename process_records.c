@@ -159,10 +159,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     if (keycode == COMBO_LAYER_TOGGLE && record->event.pressed) {
-        // Toggle combos by directly modifying keymap config
-        keymap_config.raw = eeconfig_read_keymap();
-        keymap_config.raw ^= (1U << 0);  // Toggle the combo bit
-        eeconfig_update_keymap(keymap_config.raw);
+        // Toggle combos first
+        /*tap_code16(QK_COMBO_TOGGLE);*/
+        combo_toggle()
+
+        // Small delay to ensure combo toggle is processed
+        wait_ms(10);
 
         // Then toggle layer
         layer_invert(L_BASE_NOMODS);
