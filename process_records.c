@@ -161,7 +161,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (keycode == COMBO_LAYER_TOGGLE && record->event.pressed) {
         // Toggle combos first
         /*tap_code16(QK_COMBO_TOGGLE);*/
-        combo_toggle()
+        combo_toggle();
 
         // Small delay to ensure combo toggle is processed
         wait_ms(10);
