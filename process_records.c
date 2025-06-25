@@ -160,15 +160,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     if (keycode == COMBO_LAYER_TOGGLE && record->event.pressed) {
         // Toggle combos
-        tap_code(QK_COMBO_TOGGLE);
-        /*keymap_config.raw = eeconfig_read_keymap();*/
-        /*keymap_config.raw ^= (1U << 0);*/
-        /*eeconfig_update_keymap(keymap_config.raw);*/
+        tap_code16(QK_COMBO_TOGGLE);
 
         // Toggle layer
         layer_invert(L_NUMBERS);
 
         return false;
+}
 
     return process_record_user_kb(keycode, record);
 }

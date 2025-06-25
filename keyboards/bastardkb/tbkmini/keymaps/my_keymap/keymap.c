@@ -17,6 +17,7 @@
 
 #include QMK_KEYBOARD_H
 #include "num_word.h"
+#include "custom_keycodes.h"
 /* Key positions
   ╭─────────────────────╮ ╭─────────────────────╮
   │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
