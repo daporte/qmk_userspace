@@ -18,6 +18,7 @@
 
 enum rj_layers {
     L_BASE,
+    L_BASE_NOMODS,
 
 #ifdef USER_INCLUDE_QWERTY
     L_QWERTY,

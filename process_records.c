@@ -163,7 +163,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         tap_code16(QK_COMBO_TOGGLE);
 
         // Toggle layer
-        layer_invert(L_NUMBERS);
+        layer_invert(L_BASE_NOMODS);
 
         return false;
 }
