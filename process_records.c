@@ -159,11 +159,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     if (keycode == COMBO_LAYER_TOGGLE && record->event.pressed) {
-        // Toggle combos
-
-        // Toggle layer
-        layer_invert(L_BASE_NOMODS);
+        // Toggle combos first
         tap_code16(QK_COMBO_TOGGLE);
+
+        // Small delay to ensure combo toggle is processed
+        wait_ms(10);
+
+        // Then toggle layer
+        layer_invert(L_BASE_NOMODS);
 
         return false;
 }
