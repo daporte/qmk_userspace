@@ -17,6 +17,7 @@
 #include QMK_KEYBOARD_H
 #include "process_records.h"
 #include "num_word.h"
+#include "custom_keycodes.h"
 
 uint8_t mod_state;
 
