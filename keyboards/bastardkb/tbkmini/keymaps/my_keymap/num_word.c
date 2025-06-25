@@ -103,6 +103,12 @@ bool process_record_num_word(uint16_t keycode, const keyrecord_t *record) {
         }
     }
 
+    if (keycode == KC_ESC) {
+        if (is_num_word_on) {
+            disable_num_word();
+        }
+        return true
+    }
     // Other than the custom keycodes, nothing else in this feature will
     // activate if the behavior is not on, so allow QMK to handle the
     // event as usual
