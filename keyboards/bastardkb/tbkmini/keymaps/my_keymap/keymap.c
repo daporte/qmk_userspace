@@ -31,10 +31,6 @@
 /*#define COMBO_TERM 18*/
 
 
-enum custom_keycodes {
-    COMBO_LAYER_TOGGLE = SAFE_RANGE
-};
-
 enum combos {
     COMBO_QMARK,
     COMBO_EXCL,
