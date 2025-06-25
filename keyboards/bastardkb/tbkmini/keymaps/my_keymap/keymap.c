@@ -30,6 +30,10 @@
 /*#define COMBO_TERM 18*/
 
 
+enum custom_keycodes {
+    COMBO_LAYER_TOGGLE = SAFE_RANGE
+};
+
 enum combos {
     COMBO_QMARK,
     COMBO_EXCL,
@@ -125,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [L_BASE] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        QK_COMBO_TOGGLE, KC_QUOTE, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, KC_DEL,
+        COMBO_LAYER_TOGGLE, KC_QUOTE, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, KC_DEL,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_ESC, KC_A, KC_O, KC_E, KC_U, KC_I, KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
