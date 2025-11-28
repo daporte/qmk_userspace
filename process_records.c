@@ -173,10 +173,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     if (keycode == HWNZ) {
         if (record->event.pressed) {
-            SEND_STRING("hwnz/");
+            // Press all keys simultaneously
+            register_code(KC_H);
+            register_code(KC_W);
+            register_code(KC_N);
+            register_code(KC_Z);
+            register_code(KC_SLASH);  // if you want the slash too
+
+            // Optional: small delay if needed
+            wait_ms(10);
+
+            // Release all keys
+            unregister_code(KC_H);
+            unregister_code(KC_W);
+            unregister_code(KC_N);
+            unregister_code(KC_Z);
+            unregister_code(KC_SLASH);
         }
-        return false;  // Skip further processing
-    }
+    return false;  // Skip further processing
+}
+
 
     return process_record_user_kb(keycode, record);
 }
