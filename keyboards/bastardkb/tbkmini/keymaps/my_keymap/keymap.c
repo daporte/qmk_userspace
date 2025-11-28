@@ -122,42 +122,23 @@ combo_t key_combos[] = {
 
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    // Set 4 known indices to distinct colors so we can observe mapping
-    // Index 0 (first index)
-    rgb_matrix_set_color(0, RGB_RED);
-    // Middle of left half (approx)
-    if (RGB_MATRIX_LED_COUNT > 2) rgb_matrix_set_color( (RGB_MATRIX_LED_COUNT/4), RGB_GREEN );
-    // First index of right half (approx)
-    if (RGB_MATRIX_LED_COUNT > 3) rgb_matrix_set_color( (RGB_MATRIX_LED_COUNT/2), RGB_BLUE );
-    // Last index
-    if (RGB_MATRIX_LED_COUNT > 1) rgb_matrix_set_color( RGB_MATRIX_LED_COUNT - 1, RGB_WHITE );
-
-    // Also set the allowed range for this callback so we can visually confirm
-    for (uint8_t i = led_min; i < led_max; i++) {
-        // faintly tint allowed range so you can visually contrast with the explicit indices
-        rgb_matrix_set_color(i, RGB_YELLOW);
+    for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++){
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+            case L_BASE:
+                rgb_matrix_set_color(i, RGB_BLUE);
+                break;
+            case L_BASE_NOMODS:
+                rgb_matrix_set_color(i, RGB_YELLOW);
+                break;
+            case L_NUMBERS:
+                rgb_matrix_set_color(i, RGB_RED);
+                break;
+            default:
+                break;
+        }
     }
     return false;
 }
-
-// bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-//     for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++){
-//         switch(get_highest_layer(layer_state|default_layer_state)) {
-//             case L_BASE:
-//                 rgb_matrix_set_color(i, RGB_BLUE);
-//                 break;
-//             case L_BASE_NOMODS:
-//                 rgb_matrix_set_color(i, RGB_YELLOW);
-//                 break;
-//             case L_NUMBERS:
-//                 rgb_matrix_set_color(i, RGB_RED);
-//                 break;
-//             default:
-//                 break;
-//         }
-//     }
-//     return false;
-// }
 
 
 

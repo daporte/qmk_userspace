@@ -9,3 +9,4 @@
 #define RGB_MATRIX_KEYPRESSES // optional, only if you want reactive keys
 #undef ENABLE_RGB_MATRIX_SOLID_COLOR
 #undef ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
+#define SPLIT_LAYER_STATE_ENABLE
