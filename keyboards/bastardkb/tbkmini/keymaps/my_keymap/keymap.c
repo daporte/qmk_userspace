@@ -122,6 +122,23 @@ combo_t key_combos[] = {
 
 
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+        case 0:
+            rgblight_sethsv_noeeprom(HSV_BLUE);
+            break;
+        case 1:
+            rgblight_sethsv_noeeprom(HSV_RED);
+            break;
+        case 2:
+            rgblight_sethsv_noeeprom(HSV_GREEN);
+            break;
+    }
+    return state;
+}
+
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [L_BASE] = LAYOUT_split_3x6_3(
