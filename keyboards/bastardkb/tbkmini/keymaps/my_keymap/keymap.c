@@ -131,6 +131,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    for (uint8_t i = led_min; i < led_max; i++) {
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+            case L_BASE:
+                rgb_matrix_set_color(i, RGB_BLUE);
+                break;
+            case L_BASE_NOMODS:
+                rgb_matrix_set_color(i, RGB_YELLOW);
+                break;
+            case L_NUMBERS:
+                rgb_matrix_set_color(i, RGB_RED);
+                break;
+            default:
+                break;
+        }
+    }
+    return false;
+}
 
 enum custom_keycodes {
     HWNZ = SAFE_RANGE
