@@ -121,16 +121,6 @@ combo_t key_combos[] = {
 };
 
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HWNZ:
-            if (record->event.pressed) {
-                SEND_STRING("hwnz/");
-            }
-            return false;  // Skip further processing
-    }
-    return true;
-}
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     for (uint8_t i = led_min; i < led_max; i++) {
         switch(get_highest_layer(layer_state|default_layer_state)) {
