@@ -177,8 +177,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;  // Skip further processing
     }
-}
-}
 
     return process_record_user_kb(keycode, record);
 }
