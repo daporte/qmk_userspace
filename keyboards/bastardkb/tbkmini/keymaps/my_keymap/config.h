@@ -6,4 +6,6 @@
 #define HOLD_ON_OTHER_KEY_PRESS
 #define FORCE_NKRO
 #define SPLIT_TRANSPORT_MIRROR
-
+#define RGB_MATRIX_KEYPRESSES // optional, only if you want reactive keys
+#undef ENABLE_RGB_MATRIX_SOLID_COLOR
+#undef ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
