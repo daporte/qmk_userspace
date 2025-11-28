@@ -165,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X, KC_B, KC_M, KC_W, KC_V, KC_Z, KC_BSLS,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-        KC_BSPC, KC_TAB, MO(L_NUMBERS), QK_UNDERGLOW_VALUE_UP, KC_SPC, KC_ENT
+        KC_BSPC, KC_TAB, MO(L_NUMBERS), HWNZ, KC_SPC, KC_ENT
         //`--------------------------'  `--------------------------'
 
         ),
