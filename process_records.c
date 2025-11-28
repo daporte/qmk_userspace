@@ -170,6 +170,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_invert(L_BASE_NOMODS);
 
         return false;
+    }
     if (keycode == HWNZ) {
         if (record->event.pressed) {
             SEND_STRING("hwnz/");
