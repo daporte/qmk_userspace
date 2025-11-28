@@ -121,22 +121,20 @@ combo_t key_combos[] = {
 };
 
 
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (get_highest_layer(state)) {
-        case 0:
-            rgblight_sethsv_noeeprom(HSV_BLUE);
-            break;
-        case 1:
-            rgblight_sethsv_noeeprom(HSV_RED);
-            break;
-        case 2:
-            rgblight_sethsv_noeeprom(HSV_GREEN);
-            break;
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HWNZ:
+            if (record->event.pressed) {
+                SEND_STRING("hwnz/");
+            }
+            return false;  // Skip further processing
     }
-    return state;
+    return true;
 }
 
+enum custom_keycodes {
+    HWNZ = SAFE_RANGE
+};
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -149,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X, KC_B, KC_M, KC_W, KC_V, KC_Z, NUMWORD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), MO(L_NUMBERS), QK_UNDERGLOW_VALUE_UP, KC_SPC, RALT_T(KC_ENT)
+        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), MO(L_NUMBERS), HWNZ, KC_SPC, RALT_T(KC_ENT)
         //`--------------------------'  `--------------------------'
 
         ),
