@@ -77,7 +77,7 @@ const uint16_t PROGMEM combo_prcnt[] = {KC_Y, KC_I, COMBO_END};
 
 const uint16_t PROGMEM combo_grave[] = {KC_O, KC_Q, COMBO_END};
 const uint16_t PROGMEM combo_bslh[] = {KC_E, KC_J, COMBO_END};
-const uint16_t PROGMEM combo_minus[] = {KC_U, KC_K, COMBO_END};
+const uint16_t PROGMEM combo_minus[] = {KC_A, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_tilde[] = {KC_I, KC_X, COMBO_END};
 
 // Vertical combos - right hand
@@ -87,7 +87,7 @@ const uint16_t PROGMEM combo_star[] = {KC_C, KC_T, COMBO_END};
 const uint16_t PROGMEM combo_amps[] = {KC_R, KC_N, COMBO_END};
 
 const uint16_t PROGMEM combo_plus[] = {KC_D, KC_B, COMBO_END};
-const uint16_t PROGMEM combo_under[] = {KC_H, KC_M, COMBO_END};
+const uint16_t PROGMEM combo_under[] = {KC_N, KC_S, COMBO_END};
 const uint16_t PROGMEM combo_fslh[] = {KC_T, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_pipe[] = {KC_N, KC_V, COMBO_END};
 
