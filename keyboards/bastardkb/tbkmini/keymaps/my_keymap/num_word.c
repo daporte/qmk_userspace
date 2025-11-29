@@ -65,6 +65,8 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
         case KC_G:
         case KC_K:
         case KC_J:
+        case KC_ENT:
+        case KC_SPC:
         case KC_BSPC:
             return false;
 
