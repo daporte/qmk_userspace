@@ -58,14 +58,14 @@ enum combos {
     COMBO_PIPE,
 };
 
-const uint16_t PROGMEM combo_qmark[] = {KC_E, KC_U, COMBO_END};
+const uint16_t PROGMEM combo_qmark[] = {KC_A, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_excl[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM combo_lbkt[] = {KC_G, KC_C, COMBO_END};
-const uint16_t PROGMEM combo_rbkt[] = {KC_C, KC_R, COMBO_END};
-const uint16_t PROGMEM combo_lpar[] = {KC_H, KC_T, COMBO_END};
-const uint16_t PROGMEM combo_rpar[] = {KC_T, KC_N, COMBO_END};
-const uint16_t PROGMEM combo_lbrc[] = {KC_M, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_rbrc[] = {KC_W, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_lbkt[] = {KC_C, KC_R, COMBO_END};
+const uint16_t PROGMEM combo_rbkt[] = {KC_R, KC_L, COMBO_END};
+const uint16_t PROGMEM combo_lpar[] = {KC_T, KC_N, COMBO_END};
+const uint16_t PROGMEM combo_rpar[] = {KC_N, KC_S, COMBO_END};
+const uint16_t PROGMEM combo_lbrc[] = {KC_W, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_rbrc[] = {KC_V, KC_Z, COMBO_END};
 
 
 
@@ -77,7 +77,7 @@ const uint16_t PROGMEM combo_prcnt[] = {KC_Y, KC_I, COMBO_END};
 
 const uint16_t PROGMEM combo_grave[] = {KC_O, KC_Q, COMBO_END};
 const uint16_t PROGMEM combo_bslh[] = {KC_E, KC_J, COMBO_END};
-const uint16_t PROGMEM combo_minus[] = {KC_A, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_minus[] = {KC_E, KC_U, COMBO_END};
 const uint16_t PROGMEM combo_tilde[] = {KC_I, KC_X, COMBO_END};
 
 // Vertical combos - right hand
@@ -87,7 +87,7 @@ const uint16_t PROGMEM combo_star[] = {KC_C, KC_T, COMBO_END};
 const uint16_t PROGMEM combo_amps[] = {KC_R, KC_N, COMBO_END};
 
 const uint16_t PROGMEM combo_plus[] = {KC_D, KC_B, COMBO_END};
-const uint16_t PROGMEM combo_under[] = {KC_N, KC_S, COMBO_END};
+const uint16_t PROGMEM combo_under[] = {KC_H, KC_T, COMBO_END};
 const uint16_t PROGMEM combo_fslh[] = {KC_T, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_pipe[] = {KC_N, KC_V, COMBO_END};
 
@@ -149,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [L_BASE] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        L_GEMINI, KC_QUOTE, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, KC_DEL,
+        TG(L_GEMINI), KC_QUOTE, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, KC_DEL,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_ESC, KC_A, KC_O, KC_E, KC_U, KC_I, KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
