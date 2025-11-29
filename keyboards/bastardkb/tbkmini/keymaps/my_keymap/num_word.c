@@ -65,8 +65,6 @@ bool should_terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
         case KC_G:
         case KC_K:
         case KC_J:
-        case KC_ENT:
-        case KC_SPC:
         case KC_BSPC:
             return false;
 
@@ -105,7 +103,7 @@ bool process_record_num_word(uint16_t keycode, const keyrecord_t *record) {
         }
     }
 
-    if (keycode == KC_ESC) {
+    if (keycode == KC_ESC || keycode == KC_SPC || keycode == KC_ENT) {
         if (is_num_word_on) {
             disable_num_word();
         }
