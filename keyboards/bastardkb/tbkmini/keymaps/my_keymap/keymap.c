@@ -127,7 +127,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             case L_BASE:
                 if (get_mods() & MOD_MASK_SHIFT) {
                     // Change all LEDs to red when shift is held
-                    for (uint8_t i = led_min; i < led_max; i++) {
+                    for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
                         rgb_matrix_set_color(i, 148, 0, 211); // R,G,B
                     }
                 } else {
