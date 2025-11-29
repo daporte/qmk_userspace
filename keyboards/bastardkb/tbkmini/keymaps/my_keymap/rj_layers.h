@@ -29,6 +29,7 @@ enum rj_layers {
 #endif
 
     L_NUMBERS,
+    L_GEMINI,
     L_SYMBOLS,
     L_NAVIGATION,
     L_FN,
