@@ -186,7 +186,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (keycode == LT(0, KC_NO)) {
         if (record->event.pressed) {
              if (record->tap.count && record->event.pressed) {
-                tap_code(MI_C3); // Intercept tap function to send Ctrl-C
+                //tap_code(MI_C3); // Intercept tap function to send Ctrl-C
+                midi_send_noteon(&midi_device, 0, MI_C3, 127);
+                midi_send_noteoff(&midi_device, 0, MI_C3, 127);
             } else if (record->event.pressed) {
                 //tap_code16(KC_V); // Intercept hold function to send Ctrl-V
                 layer_on(L_BASE_TOGGLE);
