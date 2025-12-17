@@ -203,6 +203,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR ,
                                        STN_A,   STN_O,   XXXXXXX, XXXXXXX, STN_E,   STN_U
         ),
+    [L_BASE_TOGGLE] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        TO(L_GEMINI), KC_QUOTE, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, KC_DEL,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_ESC, KC_A, KC_O, KC_E, KC_U, KC_I, KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X, KC_B, KC_M, KC_W, KC_V, KC_Z, NUMWORD,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), XXXXXXX, XXXXXXX, KC_SPC, RALT_T(KC_ENT)
+        //`--------------------------'  `--------------------------'
+
+        ),
     /*    ),*/
     /**/
     /*[2] = LAYOUT_split_3x6_3(*/

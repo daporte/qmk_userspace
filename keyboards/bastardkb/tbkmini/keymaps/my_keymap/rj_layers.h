@@ -31,6 +31,7 @@ enum rj_layers {
     L_NUMBERS,
     L_GEMINI,
     L_MIDI,
+    L_BASE_TOGGLE,
     L_SYMBOLS,
     L_NAVIGATION,
     // L_FN,
