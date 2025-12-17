@@ -161,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X, KC_B, KC_M, KC_W, KC_V, KC_Z, NUMWORD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), MO(L_NUMBERS), to(L_MIDI), KC_SPC, RALT_T(KC_ENT)
+        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), MO(L_NUMBERS), TO(L_MIDI), KC_SPC, RALT_T(KC_ENT)
         //`--------------------------'  `--------------------------'
 
         ),
@@ -180,7 +180,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [L_MIDI] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.
-        MI_C0, MI_Cs0, MI_D0, MI_Ds0, MI_E0, MI_F0, MI_Fs0, MI_G0, MI_Gs0, MI_A0, MI_As0, MI_B0,
+        MI_C0, MI_Cs, MI_D0, MI_Ds, MI_E0, MI_F0, MI_Fs, MI_G0, MI_Gs, MI_A0, MI_As, MI_B0,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         MI_C1, MI_Cs1, MI_D1, MI_Ds1, MI_E1, MI_F1, MI_Fs1, MI_G1, MI_Gs1, MI_A1, MI_As1, MI_B1,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
