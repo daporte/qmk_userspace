@@ -128,19 +128,19 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             case L_BASE:
                 if (get_mods() & MOD_MASK_SHIFT) {
                     // Change all LEDs to red when shift is held
-                    rgb_matrix_set_color(i, RGB_GOLD); // R,G,B
+                    rgb_matrix_set_color(i, RGB_GOLD / 10); // R,G,B
                 } else {
-                    rgb_matrix_set_color(i, RGB_BLUE);
+                    rgb_matrix_set_color(i, RGB_BLUE / 10);
                 }
                 break;
             case L_NUMBERS:
-                rgb_matrix_set_color(i, RGB_YELLOW);
+                rgb_matrix_set_color(i, RGB_YELLOW / 10);
                 break;
             case L_GEMINI:
-                rgb_matrix_set_color(i, RGB_GREEN);
+                rgb_matrix_set_color(i, RGB_GREEN / 10);
                 break;
             case L_MIDI:
-                rgb_matrix_set_color(i, RGB_PINK);
+                rgb_matrix_set_color(i, RGB_PINK / 10);
                 break;
             default:
                 break;
