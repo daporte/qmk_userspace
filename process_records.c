@@ -20,7 +20,6 @@
 #include "custom_keycodes.h"
 
 // Custom keycode for momentary Base layer with Ctrl held
-#define BASE_CTRL_HOLD SAFE_RANGE
 
 
 uint8_t mod_state;
@@ -155,17 +154,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
-    // BASE_CTRL_HOLD: Hold L_BASE layer and Ctrl as long as key is pressed
+    // BASE_CTRL_HOLD: Debug - just switch layer while holding, with LED indication
     if (keycode == BASE_CTRL_HOLD) {
         if (record->event.pressed) {
-            layer_on(L_BASE);
-            register_code(KC_LCTL);
+            layer_on(L_BASE); // only activate layer
+            // Set all LEDs to red as visual indication
+            for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
+                rgb_matrix_set_color(i, 255, 0, 0);
+            }
         } else {
             layer_off(L_BASE);
-            unregister_code(KC_LCTL);
+            // Restore whatever the current layer indication should be
+            rgb_matrix_indicators();
         }
         return false;
     }
+
+
 
     // Check for G, J, K in the numbers layer
     if (record->event.pressed && (keycode == KC_G || keycode == KC_J || keycode == KC_K)) {
