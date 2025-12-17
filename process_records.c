@@ -185,7 +185,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     if (keycode == BASE_ALT_HOLD) {
         if (record->event.pressed) {
-            if (record->tap.count && !record->tap.interrupted) {
+            if (record->tap.count) {
                 tap_code(KC_A);
             } else {
                 layer_on(L_BASE_TOGGLE);
