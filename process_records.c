@@ -149,11 +149,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     /*        return false;*/
     /*    }*/
     /*}*/
-
-    if (!process_record_num_word(keycode, record)) {
-        return false;
-    }
-
     // BASE_CTRL_HOLD: Debug - just switch layer while holding, with LED indication
     if (keycode == BASE_CTRL_HOLD) {
         if (record->event.pressed) {
@@ -169,6 +164,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
     }
+
+    if (!process_record_num_word(keycode, record)) {
+        return false;
+    }
+
 
 
 
