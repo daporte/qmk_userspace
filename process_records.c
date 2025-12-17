@@ -19,6 +19,10 @@
 #include "num_word.h"
 #include "custom_keycodes.h"
 
+// Custom keycode for momentary Base layer with Ctrl held
+#define BASE_CTRL_HOLD SAFE_RANGE
+
+
 uint8_t mod_state;
 
 
@@ -148,6 +152,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     /*}*/
 
     if (!process_record_num_word(keycode, record)) {
+        return false;
+    }
+
+    // BASE_CTRL_HOLD: Hold L_BASE layer and Ctrl as long as key is pressed
+    if (keycode == BASE_CTRL_HOLD) {
+        if (record->event.pressed) {
+            layer_on(L_BASE);
+            register_code(KC_LCTL);
+        } else {
+            layer_off(L_BASE);
+            unregister_code(KC_LCTL);
+        }
         return false;
     }
 
