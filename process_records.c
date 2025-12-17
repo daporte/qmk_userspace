@@ -150,36 +150,56 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     /*    }*/
     /*}*/
     // BASE_CTRL_HOLD: Debug - just switch layer while holding, with LED indication
+    // Tap for letter, hold for momentary layer + modifier
     if (keycode == BASE_CTRL_HOLD) {
         if (record->event.pressed) {
-            layer_on(L_BASE_TOGGLE);   // momentarily turn on the layer
-            register_code(KC_LCTL);    // hold control
+            if (record->tap.count && !record->tap.interrupted) {
+                tap_code(KC_C);
+            } else {
+                layer_on(L_BASE_TOGGLE);
+                register_code(KC_LCTL);
+            }
         } else {
-            layer_off(L_BASE_TOGGLE);
-            unregister_code(KC_LCTL);
+            if (!(record->tap.count && !record->tap.interrupted)) {
+                layer_off(L_BASE_TOGGLE);
+                unregister_code(KC_LCTL);
+            }
         }
         return false;
     }
     if (keycode == BASE_SHIFT_HOLD) {
         if (record->event.pressed) {
-            layer_on(L_BASE_TOGGLE);   // momentarily turn on the layer
-            register_code(KC_LSFT);    // hold control
+            if (record->tap.count && !record->tap.interrupted) {
+                tap_code(KC_S);
+            } else {
+                layer_on(L_BASE_TOGGLE);
+                register_code(KC_LSFT);
+            }
         } else {
-            layer_off(L_BASE_TOGGLE);
-            unregister_code(KC_LSFT);
+            if (!(record->tap.count && !record->tap.interrupted)) {
+                layer_off(L_BASE_TOGGLE);
+                unregister_code(KC_LSFT);
+            }
         }
         return false;
     }
     if (keycode == BASE_ALT_HOLD) {
         if (record->event.pressed) {
-            layer_on(L_BASE_TOGGLE);   // momentarily turn on the layer
-            register_code(KC_LALT);    // hold control
+            if (record->tap.count && !record->tap.interrupted) {
+                tap_code(KC_A);
+            } else {
+                layer_on(L_BASE_TOGGLE);
+                register_code(KC_LALT);
+            }
         } else {
-            layer_off(L_BASE_TOGGLE);
-            unregister_code(KC_LALT);
+            if (!(record->tap.count && !record->tap.interrupted)) {
+                layer_off(L_BASE_TOGGLE);
+                unregister_code(KC_LALT);
+            }
         }
         return false;
     }
+
 
     if (!process_record_num_word(keycode, record)) {
         return false;
