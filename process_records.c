@@ -183,14 +183,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
     }
-    if (keycode == BASE_ALT_HOLD) {
+    if (keycode == LT(0, KC_NO)) {
         if (record->event.pressed) {
-            if (record->tap.count) {
-                tap_code(KC_A);
-            } else {
-                layer_on(L_BASE_TOGGLE);
-                register_code(KC_LALT);
+             if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_C); // Intercept tap function to send Ctrl-C
+            } else if (record->event.pressed) {
+                tap_code16(KC_V); // Intercept hold function to send Ctrl-V
             }
+            return false;
         } else {
             if (!(record->tap.count && !record->tap.interrupted)) {
                 layer_off(L_BASE_TOGGLE);
