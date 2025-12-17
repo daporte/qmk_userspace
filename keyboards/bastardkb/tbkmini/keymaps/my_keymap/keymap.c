@@ -31,6 +31,14 @@
 /*#define COMBO_TERM 18*/
 
 
+enum layers {
+    L_BASE,
+    L_BASE_NOMODS,
+    L_NUMBERS,
+    L_GEMINI,
+    L_MIDI,
+};
+
 enum combos {
     COMBO_QMARK,
     COMBO_EXCL,
@@ -160,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X, KC_B, KC_M, KC_W, KC_V, KC_Z, NUMWORD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), MO(L_NUMBERS), HWNZ, KC_SPC, RALT_T(KC_ENT)
+        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), MO(L_NUMBERS), to(L_MIDI), KC_SPC, RALT_T(KC_ENT)
         //`--------------------------'  `--------------------------'
 
         ),
@@ -187,14 +195,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, XXXXXXX, XXXXXXX, KC_G, KC_8, XXXXXXX, XXXXXXX, KC_9, XXXXXXX, XXXXXXX, XXXXXXX, NUMWORD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
         KC_BSPC, KC_TAB, KC_LCTL, MO(L_NUMBERS), KC_SPC, KC_ENT
-        //`--------------------------'  `--------------------------'
+//`--------------------------'  `--------------------------'
     ),
+
+    [L_MIDI] = LAYOUT_split_3x6_3(
+            //,-----------------------------------------------------.
+            MI_C(36), MI_C(37), MI_C(38), MI_C(39), MI_C(40), MI_C(41), MI_C(42), MI_C(43), MI_C(44), MI_C(45), MI_C(46), MI_C(47),
+            //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+            MI_C(48), MI_C(49), MI_C(50), MI_C(51), MI_C(52), MI_C(53), MI_C(54), MI_C(55), MI_C(56), MI_C(57), MI_C(58), MI_C(59),
+            //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+            MI_C(60), MI_C(61), MI_C(62), MI_C(63), MI_C(64), MI_C(65), MI_C(66), MI_C(67), MI_C(68), MI_C(69), MI_C(70), MI_C(71),
+            //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+            MI_C(72), MI_C(73), MI_C(74), to(L_BASE), MI_C(76), MI_C(77)
+            //`--------------------------'  `--------------------------'
+        ),
     [L_GEMINI] = LAYOUT_split_3x6_3(
-        TO(L_BASE),  STN_N2,  STN_N3,  STN_N4,  STN_N5,  STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NA,  STN_NB,  STN_NC ,
-        XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1, STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR ,
-        XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR ,
-                                   STN_A,   STN_O,   XXXXXXX, XXXXXXX, STN_E,   STN_U
-    ),
+            TO(L_BASE),  STN_N2,  STN_N3,  STN_N4,  STN_N5,  STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NA,  STN_NB,  STN_NC ,
+            XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1, STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR ,
+            XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR ,
+                                       STN_A,   STN_O,   XXXXXXX, XXXXXXX, STN_E,   STN_U
+        ),
     /*    ),*/
     /**/
     /*[2] = LAYOUT_split_3x6_3(*/
