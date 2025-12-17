@@ -171,6 +171,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // Set all LEDs to red as visual indication
             for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
                 rgb_matrix_set_color(i, 255, 0, 0);
+            }
         }
         return false;
     }
