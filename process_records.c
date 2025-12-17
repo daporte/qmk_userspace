@@ -167,11 +167,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             unregister_code(KC_N);
             unregister_code(KC_Z);
             unregister_code(KC_SLASH);
-            layer_move(L_BASE_TOGGLE); // only activate layer
+            layer_on(L_BASE_TOGGLE); // only activate layer
             // Set all LEDs to red as visual indication
             for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
                 rgb_matrix_set_color(i, 255, 0, 0);
             }
+        } else {
+            layer_off(L_BASE_TOGGLE);
+            // Restore whatever the current layer indication should be
+            rgb_matrix_indicators();
         }
         return false;
     }

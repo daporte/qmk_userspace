@@ -133,6 +133,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                     rgb_matrix_set_color(i, RGB_BLUE / 10);
                 }
                 break;
+            case L_BASE_TOGGLE:
+                rgb_matrix_set_color(i, RGB_BLUE / 10);
+                break;
             case L_NUMBERS:
                 rgb_matrix_set_color(i, RGB_YELLOW / 10);
                 break;
