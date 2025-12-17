@@ -152,30 +152,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // BASE_CTRL_HOLD: Debug - just switch layer while holding, with LED indication
     if (keycode == BASE_CTRL_HOLD) {
         if (record->event.pressed) {
-            register_code(KC_H);
-            register_code(KC_W);
-            register_code(KC_N);
-            register_code(KC_Z);
-            register_code(KC_SLASH);  // if you want the slash too
-
-            // Optional: small delay if needed
-            wait_ms(10);
-
-            // Release all keys
-            unregister_code(KC_H);
-            unregister_code(KC_W);
-            unregister_code(KC_N);
-            unregister_code(KC_Z);
-            unregister_code(KC_SLASH);
-            layer_on(L_BASE_TOGGLE); // only activate layer
-            // Set all LEDs to red as visual indication
-            for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
-                rgb_matrix_set_color(i, 255, 0, 0);
-            }
+            layer_on(L_BASE_TOGGLE);   // momentarily turn on the layer
+            register_code(KC_LCTL);    // hold control
         } else {
             layer_off(L_BASE_TOGGLE);
-            // Restore whatever the current layer indication should be
-            rgb_matrix_indicators();
+            unregister_code(KC_LCTL);
         }
         return false;
     }
