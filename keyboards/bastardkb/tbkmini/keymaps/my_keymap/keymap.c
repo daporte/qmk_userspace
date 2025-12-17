@@ -130,7 +130,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                     // Change all LEDs to red when shift is held
                     rgb_matrix_set_color(i, RGB_GOLD); // R,G,B
                 } else {
-                    rgb_matrix_set_color(i, RGB_RED);
+                    rgb_matrix_set_color(i, RGB_BLUE);
                 }
                 break;
             case L_NUMBERS:
@@ -140,7 +140,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb_matrix_set_color(i, RGB_GREEN);
                 break;
             case L_MIDI:
-                rgb_matrix_set_color(i, RGB_BLUE);
+                rgb_matrix_set_color(i, RGB_VIOLET);
                 break;
             default:
                 break;
