@@ -160,6 +160,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
     }
+    if (keycode == BASE_SHIFT_HOLD) {
+        if (record->event.pressed) {
+            layer_on(L_BASE_TOGGLE);   // momentarily turn on the layer
+            register_code(KC_LSFT);    // hold control
+        } else {
+            layer_off(L_BASE_TOGGLE);
+            unregister_code(KC_LSFT);
+        }
+        return false;
+    }
+    if (keycode == BASE_ALT_HOLD) {
+        if (record->event.pressed) {
+            layer_on(L_BASE_TOGGLE);   // momentarily turn on the layer
+            register_code(KC_LALT);    // hold control
+        } else {
+            layer_off(L_BASE_TOGGLE);
+            unregister_code(KC_LALT);
+        }
+        return false;
+    }
 
     if (!process_record_num_word(keycode, record)) {
         return false;
