@@ -178,6 +178,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //`--------------------------'  `--------------------------'
 
     ),
+    [L_NUMBERS] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        COMBO_LAYER_TOGGLE, XXXXXXX, XXXXXXX, KC_K, KC_J, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_ESC, KC_6, KC_4, KC_0, KC_2, XXXXXXX, XXXXXXX, KC_3, KC_1, KC_5, KC_7, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_LSFT, XXXXXXX, XXXXXXX, KC_G, KC_8, XXXXXXX, XXXXXXX, KC_9, XXXXXXX, XXXXXXX, XXXXXXX, NUMWORD,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        KC_BSPC, KC_TAB, KC_LCTL, MO(L_NUMBERS), KC_SPC, KC_ENT
+    ),
     [L_MIDI] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.
         MI_C, MI_Cs, MI_D, MI_Ds, MI_E, MI_F, MI_Fs, MI_G, MI_Gs, MI_A, MI_As, MI_B,
