@@ -188,7 +188,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
              if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_C); // Intercept tap function to send Ctrl-C
             } else if (record->event.pressed) {
-                tap_code16(KC_V); // Intercept hold function to send Ctrl-V
+                //tap_code16(KC_V); // Intercept hold function to send Ctrl-V
+                layer_on(L_BASE_TOGGLE);
+                register_code(KC_LALT);
             }
             return false;
         } else {
