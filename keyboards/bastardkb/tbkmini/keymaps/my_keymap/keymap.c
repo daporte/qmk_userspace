@@ -31,13 +31,6 @@
 /*#define COMBO_TERM 18*/
 
 
-enum layers {
-    L_BASE,
-    L_BASE_NOMODS,
-    L_NUMBERS,
-    L_GEMINI,
-    L_MIDI,
-};
 
 enum combos {
     COMBO_QMARK,
@@ -200,13 +193,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_MIDI] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.
-        MI_C3, MI_CS3, MI_D3, MI_DS3, MI_E3, MI_F3, MI_FS3, MI_G3, MI_GS3, MI_A3, MI_AS3, MI_B3,
+        MI_C3, MI_Cs3, MI_D3, MI_Ds3, MI_E3, MI_F3, MI_Fs3, MI_G3, MI_Gs3, MI_A3, MI_As3, MI_B3,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        MI_C4, MI_CS4, MI_D4, MI_DS4, MI_E4, MI_F4, MI_FS4, MI_G4, MI_GS4, MI_A4, MI_AS4, MI_B4,
+        MI_C4, MI_Cs4, MI_D4, MI_Ds4, MI_E4, MI_F4, MI_Fs4, MI_G4, MI_Gs4, MI_A4, MI_As4, MI_B4,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        MI_C5, MI_CS5, MI_D5, MI_DS5, MI_E5, MI_F5, MI_FS5, MI_G5, MI_GS5, MI_A5, MI_AS5, MI_B5,
+        MI_C5, MI_Cs5, MI_D5, MI_Ds5, MI_E5, MI_F5, MI_Fs5, MI_G5, MI_Gs5, MI_A5, MI_As5, MI_B5,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-        MI_C6, MI_CS6, MI_D6, MI_DS6, MI_E6, MI_F6
+        MI_C6, MI_Cs6, MI_D6, MI_Ds6, MI_E6, MI_F6
         //`--------------------------'  `--------------------------'
     ),
     [L_GEMINI] = LAYOUT_split_3x6_3(
