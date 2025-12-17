@@ -140,7 +140,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb_matrix_set_color(i, RGB_GREEN);
                 break;
             case L_MIDI:
-                rgb_matrix_set_color(i, RGB_VIOLET);
+                rgb_matrix_set_color(i, RGB_PINK);
                 break;
             default:
                 break;
