@@ -153,40 +153,52 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     /*}*/
     // BASE_CTRL_HOLD: Debug - just switch layer while holding, with LED indication
     // Tap for letter, hold for momentary layer + modifier
-    if (keycode == BASE_CTRL_HOLD) {
+    if (keycode == LT(0, KC_F22)) {
         if (record->event.pressed) {
-            if (record->tap.count && !record->tap.interrupted) {
-                tap_code(KC_C);
-            } else {
-                layer_on(L_BASE_TOGGLE);
-                register_code(KC_LCTL);
-            }
-        } else {
-            if (!(record->tap.count && !record->tap.interrupted)) {
-                layer_off(L_BASE_TOGGLE);
-                unregister_code(KC_LCTL);
-            }
-        }
-        return false;
-    }
-    if (keycode == BASE_SHIFT_HOLD) {
-        if (record->event.pressed) {
-            if (record->tap.count && !record->tap.interrupted) {
-                tap_code(KC_S);
-            } else {
+             if (record->tap.count && record->event.pressed) {
+                //tap_code(MI_C3); // Intercept tap function to send Ctrl-C
+                // midi_send_cc(&midi_device, midi_config.channel, 60, 127);
+                midi_send_noteon(&midi_device, midi_config.channel, 61, midi_config.velocity);
+            } else if (record->event.pressed) {
+                //tap_code16(KC_V); // Intercept hold function to send Ctrl-V
                 layer_on(L_BASE_TOGGLE);
                 register_code(KC_LSFT);
             }
+            return false;
         } else {
             if (!(record->tap.count && !record->tap.interrupted)) {
                 layer_off(L_BASE_TOGGLE);
                 unregister_code(KC_LSFT);
             }
+            midi_send_noteoff(&midi_device, midi_config.channel, 61, 0);
         }
         return false;
     }
-    //
-    if (keycode == BASE_ALT_HOLD) {
+
+    if (keycode == LT(0, KC_F23)) {
+        if (record->event.pressed) {
+             if (record->tap.count && record->event.pressed) {
+                //tap_code(MI_C3); // Intercept tap function to send Ctrl-C
+                // midi_send_cc(&midi_device, midi_config.channel, 60, 127);
+                midi_send_noteon(&midi_device, midi_config.channel, 62, midi_config.velocity);
+            } else if (record->event.pressed) {
+                //tap_code16(KC_V); // Intercept hold function to send Ctrl-V
+                layer_on(L_BASE_TOGGLE);
+                register_code(KC_LCTL);
+            }
+            return false;
+        } else {
+            if (!(record->tap.count && !record->tap.interrupted)) {
+                layer_off(L_BASE_TOGGLE);
+                unregister_code(KC_LCTL);
+            }
+            midi_send_noteoff(&midi_device, midi_config.channel, 62, 0);
+        }
+        return false;
+
+    }
+
+    if (keycode == LT(0, KC_NO)) {
         if (record->event.pressed) {
              if (record->tap.count && record->event.pressed) {
                 //tap_code(MI_C3); // Intercept tap function to send Ctrl-C
