@@ -190,7 +190,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
              if (record->tap.count && record->event.pressed) {
                 //tap_code(MI_C3); // Intercept tap function to send Ctrl-C
                 midi_send_cc(&midi_device, midi_config.channel, 60, 127);
-                midi_send_cc(&midi_device, midi_config.channel, 60, 127);
             } else if (record->event.pressed) {
                 //tap_code16(KC_V); // Intercept hold function to send Ctrl-V
                 layer_on(L_BASE_TOGGLE);
@@ -202,6 +201,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 layer_off(L_BASE_TOGGLE);
                 unregister_code(KC_LALT);
             }
+            midi_send_cc(&midi_device, midi_config.channel, 60, 0);
         }
         return false;
     }
