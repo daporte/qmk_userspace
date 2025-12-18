@@ -20,8 +20,6 @@
 #include "custom_keycodes.h"
 
 // Custom keycode for momentary Base layer with Ctrl held
-//
-extern MidiDevice midi_device;
 
 
 uint8_t mod_state;
@@ -189,8 +187,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
              if (record->tap.count && record->event.pressed) {
                 //tap_code(MI_C3); // Intercept tap function to send Ctrl-C
-                midi_note_on(&midi_device, 0, MI_C3, 127);
-                midi_note_ooff(&midi_device, 0, MI_C3, 127);
+                midi_send_noteon(&midi_device, 0, MI_C3, 127);
+                midi_send_noteoff(&midi_device, 0, MI_C3, 127);
             } else if (record->event.pressed) {
                 //tap_code16(KC_V); // Intercept hold function to send Ctrl-V
                 layer_on(L_BASE_TOGGLE);
