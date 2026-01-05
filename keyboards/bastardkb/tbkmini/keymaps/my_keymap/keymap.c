@@ -195,7 +195,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.
         MI_C, MI_Cs, MI_D, MI_Ds, MI_E, MI_F, MI_Fs, KC_G, MI_Gs, MI_A, MI_As, MI_B,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        MI_C1, MI_Cs1, MI_D1, MI_Ds1, MI_E1, MI_F1, MI_Fs1, MI_G1, MI_Gs1, MI_A1, MI_As1, MI_B1,
+        KC_ESC, MI_Cs1, MI_D1, MI_Ds1, MI_E1, MI_F1, MI_Fs1, MI_G1, MI_Gs1, MI_A1, MI_As1, MI_B1,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         MI_C2, MI_Cs2, KC_Q, KC_J, KC_K, MI_F2, KC_B, MI_G2, KC_W, MI_A2, MI_As2, MI_B2,
         LT(0,KC_F22), LT(0, KC_F23), LSFT_T(MI_C3), TO(L_BASE), MI_E3, LT(0, KC_F24)
