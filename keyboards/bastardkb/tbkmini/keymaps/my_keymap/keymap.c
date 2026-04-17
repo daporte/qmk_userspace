@@ -133,7 +133,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                     // Change all LEDs to red when shift is held
                     rgb_matrix_set_color(i, RGB_MAGENTA/ 10); // R,G,B
                 } else {
-                    rgb_matrix_set_color(i, RGB_ORANGE / 50);
+                    rgb_matrix_set_color(i, RGB_RED / 50);
                 }
                 break;
             case L_BASE_TOGGLE:
@@ -143,7 +143,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb_matrix_set_color(i, RGB_BLUE / 10);
                 break;
             case L_STENO:
-                rgb_matrix_set_color(i, RGB_RED / 10);
+                rgb_matrix_set_color(i, RGB_ROSA / 10);
                 break;
             case L_MIDI:
                 rgb_matrix_set_color(i, RGB_TEAL / 10);
