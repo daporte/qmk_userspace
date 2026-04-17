@@ -133,7 +133,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                     // Change all LEDs to red when shift is held
                     rgb_matrix_set_color(i, RGB_MAGENTA/ 10); // R,G,B
                 } else {
-                    rgb_matrix_set_color(i, RGB_ORANGE / 20);
+                    rgb_matrix_set_color(i, RGB_ORANGE / 50);
                 }
                 break;
             case L_BASE_TOGGLE:
