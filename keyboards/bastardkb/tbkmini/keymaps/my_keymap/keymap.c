@@ -56,6 +56,7 @@ enum combos {
     COMBO_UNDER,
     COMBO_FSLH,
     COMBO_PIPE,
+    COMBO_NUMWORD,
 };
 
 const uint16_t PROGMEM combo_qmark[] = {KC_A, KC_O, COMBO_END};
@@ -91,6 +92,8 @@ const uint16_t PROGMEM combo_under[] = {KC_H, KC_T, COMBO_END};
 const uint16_t PROGMEM combo_fslh[] = {KC_T, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_pipe[] = {KC_N, KC_V, COMBO_END};
 
+const uint16_t PROGMEM combo_numword[] = {KC_SPC, KC_ENT, COMBO_END};
+
 /*const uint16_t PROGMEM combo_lalt[] = {KC_P0, KC_P12, COMBO_END};*/
 
 combo_t key_combos[] = {
@@ -118,6 +121,7 @@ combo_t key_combos[] = {
     [COMBO_UNDER] = COMBO(combo_under, KC_UNDS),
     [COMBO_FSLH] = COMBO(combo_fslh, KC_SLSH),
     [COMBO_PIPE] = COMBO(combo_pipe, KC_PIPE),
+    [COMBO_NUMWORD] = COMBO(combo_numword, NUMWORD),
 };
 
 
