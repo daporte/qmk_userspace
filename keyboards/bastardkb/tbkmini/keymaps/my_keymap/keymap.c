@@ -92,7 +92,7 @@ const uint16_t PROGMEM combo_under[] = {KC_H, KC_T, COMBO_END};
 const uint16_t PROGMEM combo_fslh[] = {KC_T, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_pipe[] = {KC_N, KC_V, COMBO_END};
 
-const uint16_t PROGMEM combo_numword[] = {KC_SPC, KC_ENT, COMBO_END};
+const uint16_t PROGMEM combo_numword[] = {KC_SPC, RALT_T(KC_ENT), COMBO_END};
 
 /*const uint16_t PROGMEM combo_lalt[] = {KC_P0, KC_P12, COMBO_END};*/
 
