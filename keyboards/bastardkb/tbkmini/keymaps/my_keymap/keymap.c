@@ -132,27 +132,41 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    uint8_t sat = rgb_matrix_get_sat();
+    uint8_t val = rgb_matrix_get_val();
+    HSV hsv;
+    RGB rgb;
+
     for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++){
         switch(get_highest_layer(layer_state|default_layer_state)) {
             case L_BASE:
                 if (get_mods() & MOD_MASK_SHIFT) {
-                    // Change all LEDs to red when shift is held
-                    rgb_matrix_set_color(i, RGB_MAGENTA/ 10); // R,G,B
+                    hsv = (HSV){0, sat, val};  // red, brighter
                 } else {
-                    rgb_matrix_set_color(i, RGB_RED / 50);
+                    hsv = (HSV){0, sat, val / 2};  // red, dimmer
                 }
+                rgb = hsv_to_rgb(hsv);
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
             case L_BASE_TOGGLE:
-                rgb_matrix_set_color(i, RGB_ORANGE / 20);
+                hsv = (HSV){28, sat, val};  // orange
+                rgb = hsv_to_rgb(hsv);
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
             case L_NUMBERS:
-                rgb_matrix_set_color(i, RGB_BLUE / 10);
+                hsv = (HSV){170, sat, val};  // blue
+                rgb = hsv_to_rgb(hsv);
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
             case L_STENO:
-                rgb_matrix_set_color(i, RGB_PINK / 10);
+                hsv = (HSV){230, sat, val};  // pink
+                rgb = hsv_to_rgb(hsv);
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
             case L_MIDI:
-                rgb_matrix_set_color(i, RGB_TEAL / 10);
+                hsv = (HSV){128, sat, val};  // teal
+                rgb = hsv_to_rgb(hsv);
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
             // L_RGB: falls through to default - lets RGB effects show through
             default:
