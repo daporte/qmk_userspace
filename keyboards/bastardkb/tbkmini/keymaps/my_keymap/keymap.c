@@ -121,7 +121,7 @@ combo_t key_combos[] = {
     [COMBO_UNDER] = COMBO(combo_under, KC_UNDS),
     [COMBO_FSLH] = COMBO(combo_fslh, KC_SLSH),
     [COMBO_PIPE] = COMBO(combo_pipe, KC_PIPE),
-    [COMBO_NUMWORD] = COMBO(combo_numword, NUMWORD),
+    [COMBO_NUMWORD] = COMBO(combo_numword, KC_PIPE),
 };
 
 
@@ -133,11 +133,11 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                     // Change all LEDs to red when shift is held
                     rgb_matrix_set_color(i, RGB_MAGENTA/ 10); // R,G,B
                 } else {
-                    rgb_matrix_set_color(i, RGB_ORANGE / 10);
+                    rgb_matrix_set_color(i, RGB_ORANGE / 20);
                 }
                 break;
             case L_BASE_TOGGLE:
-                rgb_matrix_set_color(i, RGB_ORANGE / 10);
+                rgb_matrix_set_color(i, RGB_ORANGE / 20);
                 break;
             case L_NUMBERS:
                 rgb_matrix_set_color(i, RGB_BLUE / 10);
