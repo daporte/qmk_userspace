@@ -121,7 +121,7 @@ combo_t key_combos[] = {
     [COMBO_UNDER] = COMBO(combo_under, KC_UNDS),
     [COMBO_FSLH] = COMBO(combo_fslh, KC_SLSH),
     [COMBO_PIPE] = COMBO(combo_pipe, KC_PIPE),
-    [COMBO_NUMWORD] = COMBO(combo_numword, KC_PIPE),
+    [COMBO_NUMWORD] = COMBO(combo_numword, NUMWORD),
 };
 
 
