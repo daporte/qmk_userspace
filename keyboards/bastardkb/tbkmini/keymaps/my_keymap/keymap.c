@@ -121,8 +121,14 @@ combo_t key_combos[] = {
     [COMBO_UNDER] = COMBO(combo_under, KC_UNDS),
     [COMBO_FSLH] = COMBO(combo_fslh, KC_SLSH),
     [COMBO_PIPE] = COMBO(combo_pipe, KC_PIPE),
-    [COMBO_NUMWORD] = COMBO(combo_numword, NUMWORD),
+    [COMBO_NUMWORD] = COMBO_ACTION(combo_numword),
 };
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+    if (combo_index == COMBO_NUMWORD && pressed) {
+        toggle_num_word();
+    }
+}
 
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
