@@ -154,6 +154,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             case L_MIDI:
                 rgb_matrix_set_color(i, RGB_TEAL / 10);
                 break;
+            // L_RGB: falls through to default - lets RGB effects show through
             default:
                 break;
         }
@@ -173,7 +174,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X, KC_B, KC_M, KC_W, KC_V, KC_Z, NUMWORD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), MO(L_NUMBERS), TO(L_MIDI), KC_SPC, RALT_T(KC_ENT)
+        LSFT_T(KC_BSPC), LCTL_T(KC_TAB), TG(L_RGB), TO(L_MIDI), KC_SPC, RALT_T(KC_ENT)
         //`--------------------------'  `--------------------------'
 
         ),
@@ -235,6 +236,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LSFT_T(KC_BSPC), LCTL_T(KC_TAB), KC_LCTL, KC_A, KC_SPC, RALT_T(KC_ENT)
         //`--------------------------'  `--------------------------'
 
+        ),
+    [L_RGB] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        RM_TOGG, RM_HUEU, RM_SATU, RM_VALU, RM_SPDU, XXXXXXX, XXXXXXX, RM_NEXT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, RM_HUED, RM_SATD, RM_VALD, RM_SPDD, XXXXXXX, XXXXXXX, RM_PREV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, TG(L_RGB), TO(L_BASE), XXXXXXX, XXXXXXX
+        //`--------------------------'  `--------------------------'
         ),
     /*    ),*/
     /**/

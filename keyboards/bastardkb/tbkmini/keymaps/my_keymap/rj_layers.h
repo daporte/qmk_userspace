@@ -33,6 +33,7 @@ enum rj_layers {
     L_MIDI,
     L_STENO,
     L_BASE_TOGGLE,
+    L_RGB,
     L_SYMBOLS,
     L_NAVIGATION,
     // L_FN,
