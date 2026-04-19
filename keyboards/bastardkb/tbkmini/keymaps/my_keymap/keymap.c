@@ -158,7 +158,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb = hsv_to_rgb(hsv);
                 rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
-            case L_STENO:
+            case L_GEMINI:
                 hsv = (HSV){230, sat, val};  // pink
                 rgb = hsv_to_rgb(hsv);
                 rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
@@ -182,7 +182,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [L_BASE] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_DEL, KC_QUOTE, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, TO(L_STENO),
+        KC_DEL, KC_QUOTE, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, TO(L_GEMINI),
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_ESC, KC_A, KC_O, KC_E, KC_U, KC_I, KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
