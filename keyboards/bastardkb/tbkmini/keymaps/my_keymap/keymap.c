@@ -124,11 +124,11 @@ combo_t key_combos[] = {
     // [COMBO_NUMWORD] = COMBO_ACTION(combo_numword),
 };
 
-void process_combo_event(uint16_t combo_index, bool pressed) {
-    if (combo_index == COMBO_NUMWORD && pressed) {
-        toggle_num_word();
-    }
-}
+// void process_combo_event(uint16_t combo_index, bool pressed) {
+//     if (combo_index == COMBO_NUMWORD && pressed) {
+//         toggle_num_word();
+//     }
+// }
 
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
