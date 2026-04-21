@@ -148,6 +148,11 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb = hsv_to_rgb(hsv);
                 rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
+            case L_BASE_NOMODS:
+                hsv = (HSV){230, sat, val};  // pink
+                rgb = hsv_to_rgb(hsv);
+                rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
+                break;
             case L_BASE_TOGGLE:
                 hsv = (HSV){28, sat, val};  // orange
                 rgb = hsv_to_rgb(hsv);
@@ -159,7 +164,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
             case L_GEMINI:
-                hsv = (HSV){230, sat, val};  // pink
+                hsv = (HSV){200, sat, val};  // pink
                 rgb = hsv_to_rgb(hsv);
                 rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
                 break;
