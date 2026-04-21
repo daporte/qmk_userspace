@@ -267,9 +267,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             unregister_code(KC_Z);
             unregister_code(KC_SLASH);
         }
-    return false;  // Skip further processing
-}
+        return false;  // Skip further processing
+    }
 
+    if (keycode == PLV_TOGGLE) {
+        if (record->event.pressed) {
+            // Press F+B+L+S+D simultaneously for Plover toggle (-FBLSD)
+            register_code(KC_H);
+            register_code(KC_W);
+            register_code(KC_N);
+            register_code(KC_Z);
+            register_code(KC_SLSH);
+
+            wait_ms(10);
+
+            // Release all keys
+            unregister_code(KC_H);
+            unregister_code(KC_W);
+            unregister_code(KC_N);
+            unregister_code(KC_Z);
+            unregister_code(KC_SLSH);
+        }
+        return false;
+    }
 
     return process_record_user_kb(keycode, record);
 }

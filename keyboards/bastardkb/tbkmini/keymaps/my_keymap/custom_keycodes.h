@@ -7,4 +7,5 @@ enum custom_keycodes {
     BASE_SHIFT_HOLD,
     BASE_ALT_HOLD,
     HWNZ,
+    PLV_TOGGLE,  // Sends F+B+L+S+D simultaneously for Plover toggle
 };
