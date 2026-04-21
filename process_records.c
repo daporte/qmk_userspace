@@ -272,7 +272,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     if (keycode == PLV_TOGGLE) {
         if (record->event.pressed) {
-            // Press F+B+L+S+D simultaneously for Plover toggle (-FBLSD)
+            // Press H+W+N+Z+/ simultaneously for Plover toggle
             register_code(KC_H);
             register_code(KC_W);
             register_code(KC_N);
@@ -287,6 +287,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             unregister_code(KC_N);
             unregister_code(KC_Z);
             unregister_code(KC_SLSH);
+
+            // Toggle to BASE_NOMODS layer
+            layer_invert(L_BASE_NOMODS);
         }
         return false;
     }
