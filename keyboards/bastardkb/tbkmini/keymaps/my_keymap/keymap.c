@@ -293,3 +293,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*    //`--------------------------'  `--------------------------'*/
 };
 
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    // Disable all combos on L_BASE_NOMODS layer
+    if (layer_state_is(L_BASE_NOMODS)) {
+        return false;
+    }
+    return true;
+}
